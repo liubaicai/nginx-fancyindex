@@ -1,0 +1,1 @@
+docker run --rm --name nginx-fancyindex -v /d/ws:/usr/share/nginx/html -p 80:80 nginx-fancyindex
