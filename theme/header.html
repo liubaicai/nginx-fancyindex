@@ -10,10 +10,16 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css">
-  <link rel="stylesheet" href="/theme/theme.css">
+  <style>
+    body{background-color:#f8f9fa;padding-bottom:20px}@media (prefers-color-scheme:dark){body{background-color:#343a40;color:#fff}}.breadcrumb{background-color:transparent;padding-left:35px}.breadcrumb .breadcrumb-item a{color:#4caf50}html{position:relative;min-height:100%}.footer{position:absolute;bottom:0;width:100%;margin-bottom:0}.footer a,.footer a:focus,.footer a:hover{color:#4caf50}.header{background-color:#4caf50;color:#fff;min-height:24px}.header .navbar-brand{padding:0 8px;font-size:16px;line-height:24px;height:24px}#list a,#list a:focus,#list a:hover{color:#000}#list colgroup{display:none}#list .filename{word-break:break-all;white-space:normal}@media (prefers-color-scheme:dark){a,a:focus,a:hover{color:#000}}
+  </style>
 
-  <script type="text/javascript" src="/theme/js/breadcrumbs.js"></script>
-  <script type="text/javascript" src="/theme/js/list.js"></script>
+  <script type="text/javascript">
+    function generateBreadcrumbs(){for(var e,a,n,r=window.location.pathname.replace(/\/$/,"").split("/"),t="",c="",o=0;o<r.length;o++)c+=r[o]+"/",t+=(e=0==o?"Home":decodeURIComponent(r[o]),a=c,'<li class="breadcrumb-item'+((n=o==r.length-1)?' active aria-current="page':"")+'">'+(n?"":'<a href="'+a+'">')+e+(n?"":"</a>"));document.getElementById("breadcrumbs").innerHTML=t}
+  </script>
+  <script type="text/javascript">
+    function generateList(){var e=document.getElementById("list");e.removeAttribute("cellpadding"),e.removeAttribute("cellspacing"),e.classList.add("table","table-sm","table-hover","text-nowrap"),e.tHead.children[0].classList.add("d-none","d-md-table-row"),"/"!=window.location.pathname&&e.deleteRow(1);for(var a,s=0;a=e.rows[s];s++)filetype=function(e){if(e.endsWith("/"))return"folder";switch(e.split(".").pop().toLowerCase()){case"txt":return"text";case"pdf":return"pdf";case"bmp":case"gif":case"jpeg":case"jpg":case"png":case"tif":case"tiff":return"image";case"aac":case"aiff":case"m4a":case"mp3":case"ogg":case"opus":case"wav":return"audio";case"amv":case"avi":case"flv":case"m4v":case"mkv":case"mov":case"mp4":case"m4p":case"mpeg":case"mpg":case"ogv":case"vob":case"webm":case"wmv":return"video";case"7z":case"a":case"apk":case"ar":case"bin":case"bz2":case"cab":case"dmg":case"gz":case"iso":case"jar":case"lz":case"lzma":case"lzo":case"pak":case"partimg":case"rar":case"s7z":case"tar":case"tbz2":case"tgz":case"tlz":case"txz":case"xz":case"zip":return"archive";case"doc":case"docx":case"odt":case"rtf":return"word";case"csv":case"ods":case"xls":case"xlsx":return"excel";case"odp":case"ppt":case"pptx":return"powerpoint";case"c":case"class":case"cpp":case"cs":case"h":case"hpp":case"hxx":case"java":case"py":case"sh":case"swift":case"vb":return"code"}}(a.cells[0].children[0].innerHTML),a.insertCell(0).innerHTML=0<s?'<i class="fa fa-fw '+function(e){switch(e){case"folder":return"fa-folder";case"archive":case"audio":case"code":case"excel":case"image":case"pdf":case"powerpoint":case"text":case"video":case"word":return"fa-file-"+e+"-o";default:return"fa-file-o"}}(filetype)+'" aria-hidden="true"></i>':"",a.cells[0].classList.add("col-auto"),a.cells[1].classList.add("col","filename"),a.cells[2].classList.add("col-auto","d-none","d-md-table-cell"),a.cells[3].classList.add("col-auto","d-none","d-md-table-cell"),"image"==filetype&&a.cells[1].children[0].setAttribute("data-lightbox","roadtrip")}
+  </script>
 </head>
 
 <body>
